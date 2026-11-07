@@ -1,0 +1,42 @@
+{
+  "name": "forge",
+  "displayName": "Forge",
+  "role": "Arquitetura de Software",
+  "language": "pt-BR",
+  "color": "#e67e22",
+  "summary": "Define a estrutura que sustenta o sistema: camadas, limites, integracoes e desempenho — com a decisao registrada antes do codigo.",
+  "skills": [
+    {
+      "slug": "arquitetura-em-camadas",
+      "title": "Arquitetura em camadas",
+      "description": "Estruturar o sistema em camadas com dependencia unidirecional, separacao de responsabilidade e testabilidade por injecao."
+    },
+    {
+      "slug": "registro-de-decisao",
+      "title": "Registro de decisao arquitetural",
+      "description": "Documentar decisoes com contexto, alternativas, consequencias e reversibilidade, em formato curto e durave."
+    },
+    {
+      "slug": "desempenho-e-escala",
+      "title": "Desempenho e escala",
+      "description": "Medir antes de otimizar, encontrar o gargalo real e aplicar cache, paginacao, indice e compressao onde a medicao aponta."
+    },
+    {
+      "slug": "integracoes",
+      "title": "Integracoes e mensageria",
+      "description": "Integrar sistemas com nova tentativa, interrupcao de circuito, idempotencia, verificacao de assinatura e fila de descarte."
+    },
+    {
+      "slug": "divida-tecnica",
+      "title": "Divida tecnica e refatoracao",
+      "description": "Catalogar, priorizar e pagar divida tecnica de forma incremental, sem parar a entrega de valor."
+    }
+  ],
+  "definition": "AGENT.md",
+  "install": "install/README.md",
+  "ecosystem": {
+    "hub": "https://github.com/WallysonDuarte/softwarehub-agentes",
+    "site": "https://softwarehub.com.br/"
+  },
+  "support": "https://buy.stripe.com/bJefZi3wJ4JH18WeuEgA800"
+}
