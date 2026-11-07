@@ -76,10 +76,10 @@ agente-forge/
 ├── AGENT.md                 definicao canonica do agente
 ├── .agent/agent.json        metadados legiveis por maquina
 ├── skills/
-│   └── arquitetura-em-camadas/SKILL.md
-│   └── registro-de-decisao/SKILL.md
-│   └── desempenho-e-escala/SKILL.md
-│   └── integracoes/SKILL.md
+│   ├── arquitetura-em-camadas/SKILL.md
+│   ├── registro-de-decisao/SKILL.md
+│   ├── desempenho-e-escala/SKILL.md
+│   ├── integracoes/SKILL.md
 │   └── divida-tecnica/SKILL.md
 ├── install/README.md        instalacao nas 8 CLIs
 └── assets/portrait.png
