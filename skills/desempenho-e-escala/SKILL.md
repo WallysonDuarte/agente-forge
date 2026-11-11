@@ -68,8 +68,8 @@ moderno com conjunto de tamanhos, fonte com exibicao imediata, compressao no ser
 
 ## Limite de uso
 
-Limite por origem em servico consumido por muitos agentes atras de uma unica saida de rede faz os
-agentes bloquearem uns aos outros. Limite por **identidade do chamador**.
+Limite por origem em servico consumido por muitos clientes atras de um mesmo endereco de saida faz
+os clientes bloquearem uns aos outros. Limite por **identidade do chamador**.
 
 Quando aparecer excesso de requisicoes, identifique a camada (limite do proxy, limite da aplicacao,
 plano do usuario) pelo registro de cada uma antes de afirmar a causa. Limite do proxy costuma

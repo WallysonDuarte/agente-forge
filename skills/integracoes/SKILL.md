@@ -15,7 +15,7 @@ processamento assincrono.
 Toda chamada que sai do processo precisa de:
 
 1. **Tempo limite explicito.** Padrao de biblioteca costuma ser longo demais: com dependencia
-   atras de tunel instavel, cada requisicao prende por dezenas de segundos.
+   lenta ou instavel, cada requisicao prende por dezenas de segundos.
 2. **Nova tentativa com espera crescente** e variacao aleatoria, apenas em falha transitoria.
 3. **Interrupcao de circuito:** apos N falhas, pare de tentar por um periodo.
 4. **Distincao entre falha transitoria e definitiva.** Excesso de requisicoes, indisponibilidade e
@@ -50,7 +50,7 @@ duplicata dentro do mesmo lote.
   JSON.
 - O segredo de assinatura e por destino: trocar o destino exige trocar o segredo.
 - Use o identificador do evento do provedor como chave de idempotencia.
-- Em conta compartilhada entre varios produtos, filtre por metadado proprio em **todo** tratador.
+- Se a mesma conta atende mais de um produto, filtre por metadado proprio em **todo** tratador.
 - Responda rapido e processe depois: o provedor reenvia quando demora.
 - Nunca dependa so da notificacao para creditar algo: ofereca um caminho de conciliacao sob
   demanda.
@@ -63,14 +63,14 @@ duplicata dentro do mesmo lote.
 - Consumidor idempotente: entrega pode ser repetida por desenho.
 - Mensagem versionada; consumidor tolera campo novo que nao conhece.
 
-## Comando para executor remoto
+## Comando para executor assincrono
 
 Canal de comando filtrado por vinculo (identificador em outro sistema) descarta silenciosamente
-tudo quando o vinculo esta nulo: recupere o vinculo pelo nome no sinal de vida e **prove a entrega
-com ida e volta** (comando enviado, resultado recebido) — inserir o comando no banco nao e prova.
+tudo quando o vinculo esta nulo: valide o vinculo e **prove a entrega com ida e volta** (comando
+enviado, resultado recebido) — gravar o comando no banco nao e prova.
 
-Endpoint que muda estado e **tambem** precisa sinalizar o executor: mudar apenas um indicador no
-banco impede a redistribuicao, mas nao interrompe o que ja esta rodando.
+Operacao que muda estado e **tambem** precisa sinalizar o executor: mudar apenas um indicador no
+banco impede nova distribuicao, mas nao interrompe o que ja esta rodando.
 
 ## Checklist
 
